@@ -335,7 +335,7 @@ function rabbi_tm_contact_form() {
         if (name === '' || email === '' || message === '') {
             jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
         } else {
-            jQuery.post("modal/contact.php", {
+            jQuery.post("contact.php", {
                 ajax_name: name,
                 ajax_email: email,
                 ajax_message: message,
