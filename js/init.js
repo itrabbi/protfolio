@@ -322,6 +322,7 @@ function rabbi_tm_data_images() {
         });
     });
 }
+//CONTACT
 function rabbi_tm_contact_form() {
     "use strict";
     jQuery(".contact_form #send_message").on('click', function () {
@@ -355,6 +356,8 @@ function rabbi_tm_contact_form() {
         return false;
     });
 }
+//CONTACT
+
 function rabbi_tm_owl_carousel() {
     "use strict";
     var carousel = jQuery('.rabbi_tm_testimonials .owl-carousel');
