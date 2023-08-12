@@ -440,8 +440,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .rabbi_tm_mobile_menu .avatar {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     position: relative;
     float: right;
     margin-bottom: 50px
@@ -455,7 +455,8 @@ body::-webkit-scrollbar-thumb {
     right: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+    border-radius: 500000px;
 }
 
 .rabbi_tm_mobile_menu .menu_list {

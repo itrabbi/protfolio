@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     "use strict";
     rabbi_tm_modalbox();
     rabbi_tm_movingbox();
@@ -18,10 +18,10 @@ jQuery(document).ready(function() {
     rabbi_tm_stickyy();
     rabbi_tm_down();
     rabbi_tm_location();
-    jQuery(window).load('body', function() {
+    jQuery(window).load('body', function () {
         rabbi_tm_my_load();
     });
-    jQuery(window).on('resize', function() {
+    jQuery(window).on('resize', function () {
         rabbi_tm_menu_closer();
     });
 });
@@ -40,16 +40,16 @@ function rabbi_tm_movingbox() {
     var movingbox = jQuery('.movingbox');
     var movingboxH = jQuery('.movingbox').height() / 2;
     var list = jQuery('.rabbi_tm_news .list ul li');
-    list.on('mouseenter', function() {
+    list.on('mouseenter', function () {
         var element = jQuery(this);
         var image = element.find('.popup_image').attr('src');
         movingbox.addClass('opened');
         movingbox.css({
             backgroundImage: 'url(' + image + ')'
         });
-    }).on('mouseleave', function() {
+    }).on('mouseleave', function () {
         movingbox.removeClass('opened');
-    }).on('mousemove', function(event) {
+    }).on('mousemove', function (event) {
         var ymove = event.clientY - movingboxH;
         var xmove = event.clientX + 20;
         movingbox.css({
@@ -66,7 +66,7 @@ function rabbi_tm_page_transition() {
     var wrapper = jQuery('.rabbi_tm_all_wrap');
     var enter = wrapper.data('enter');
     var exit = wrapper.data('exit');
-    button.on('click', function() {
+    button.on('click', function () {
         var element = jQuery(this);
         var href = element.attr('href');
         if (element.parent().hasClass('rabbi_tm_button')) {
@@ -96,7 +96,7 @@ function rabbi_tm_trigger_menu() {
     var hamburger = jQuery('.rabbi_tm_topbar .trigger .hamburger');
     var mobileMenu = jQuery('.rabbi_tm_mobile_menu');
     var mobileMenuList = jQuery('.rabbi_tm_mobile_menu .menu_list ul li a');
-    hamburger.on('click', function() {
+    hamburger.on('click', function () {
         var element = jQuery(this);
         if (element.hasClass('is-active')) {
             element.removeClass('is-active');
@@ -107,7 +107,7 @@ function rabbi_tm_trigger_menu() {
         }
         return false;
     });
-    mobileMenuList.on('click', function() {
+    mobileMenuList.on('click', function () {
         jQuery('.rabbi_tm_topbar .trigger .hamburger').removeClass('is-active');
         mobileMenu.removeClass('opened');
         return false;
@@ -126,7 +126,7 @@ function rabbi_tm_experience_popup() {
     var modalBox = jQuery('.rabbi_tm_modalbox');
     var button = jQuery('.rabbi_tm_experience .rabbi_tm_full_link');
     var closePopup = modalBox.find('.close');
-    button.on('click', function() {
+    button.on('click', function () {
         var element = jQuery(this);
         var parent = element.closest('.rabbi_tm_experience .list ul li');
         var elImage = parent.find('.popup_image').attr('src');
@@ -141,7 +141,7 @@ function rabbi_tm_experience_popup() {
         modalBox.find('.descriptions .top_image').after('<div class="infos"><div class="year"><span>' + year + '</span></div><div class="job"><span>' + place + '</span><h3>' + job + '</h3></div></div>');
         return false;
     });
-    closePopup.on('click', function() {
+    closePopup.on('click', function () {
         modalBox.removeClass('opened');
         modalBox.find('.description_wrap').html('');
         return false;
@@ -152,7 +152,7 @@ function rabbi_tm_service_popup() {
     var modalBox = jQuery('.rabbi_tm_modalbox');
     var button = jQuery('.rabbi_tm_services .service_list .rabbi_tm_full_link');
     var closePopup = modalBox.find('.close');
-    button.on('click', function() {
+    button.on('click', function () {
         var element = jQuery(this);
         var parent = element.closest('.rabbi_tm_services .service_list ul li');
         var elImage = parent.find('.popup_image').attr('src');
@@ -165,7 +165,7 @@ function rabbi_tm_service_popup() {
         modalBox.find('.descriptions .top_image').after('<div class="main_title"><h3>' + title + '</h3></div>');
         return false;
     });
-    closePopup.on('click', function() {
+    closePopup.on('click', function () {
         modalBox.removeClass('opened');
         modalBox.find('.description_wrap').html('');
         return false;
@@ -176,7 +176,7 @@ function rabbi_tm_modalbox_news() {
     var modalBox = jQuery('.rabbi_tm_modalbox');
     var button = jQuery('.rabbi_tm_news .list .title a,.rabbi_tm_news .rabbi_tm_read_more a');
     var closePopup = modalBox.find('.close');
-    button.on('click', function() {
+    button.on('click', function () {
         var element = jQuery(this);
         var parent = element.closest('li');
         var content = parent.find('.news_hidden_details').html();
@@ -190,7 +190,7 @@ function rabbi_tm_modalbox_news() {
         rabbi_tm_data_images();
         return false;
     });
-    closePopup.on('click', function() {
+    closePopup.on('click', function () {
         modalBox.removeClass('opened');
         modalBox.find('.description_wrap').html('');
         return false;
@@ -200,7 +200,7 @@ function rabbi_tm_modalbox_portfolio() {
     "use strict";
     var modalBox = jQuery('.rabbi_tm_modalbox');
     var button = jQuery('.rabbi_tm_portfolio .portfolio_popup');
-    button.on('click', function() {
+    button.on('click', function () {
         var element = jQuery(this);
         var parent = element.closest('li');
         var image = parent.find('.image .main').data('img-url');
@@ -220,10 +220,10 @@ function rabbi_tm_preloader() {
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
     var preloader = $('#preloader');
     if (!isMobile) {
-        setTimeout(function() {
+        setTimeout(function () {
             preloader.addClass('preloaded');
         }, 800);
-        setTimeout(function() {
+        setTimeout(function () {
             preloader.remove();
         }, 2000);
     } else {
@@ -233,7 +233,7 @@ function rabbi_tm_preloader() {
 function rabbi_tm_my_load() {
     "use strict";
     var speed = 500;
-    setTimeout(function() {
+    setTimeout(function () {
         rabbi_tm_preloader();
     }, speed);
 }
@@ -243,35 +243,35 @@ function rabbi_tm_cursor() {
     if (myCursor.length) {
         if ($("body")) {
             const e = document.querySelector(".cursor-inner")
-              , t = document.querySelector(".cursor-outer");
+                , t = document.querySelector(".cursor-outer");
             let n, i = 0, o = !1;
-            window.onmousemove = function(s) {
+            window.onmousemove = function (s) {
                 o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"),
-                e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)",
-                n = s.clientY,
-                i = s.clientX
+                    e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)",
+                    n = s.clientY,
+                    i = s.clientX
             }
-            ,
-            $("body").on("mouseenter", "a, .cursor-pointer", function() {
-                e.classList.add("cursor-hover"),
-                t.classList.add("cursor-hover")
-            }),
-            $("body").on("mouseleave", "a, .cursor-pointer", function() {
-                $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"),
-                t.classList.remove("cursor-hover"))
-            }),
-            e.style.visibility = "visible",
-            t.style.visibility = "visible"
+                ,
+                $("body").on("mouseenter", "a, .cursor-pointer", function () {
+                    e.classList.add("cursor-hover"),
+                        t.classList.add("cursor-hover")
+                }),
+                $("body").on("mouseleave", "a, .cursor-pointer", function () {
+                    $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"),
+                        t.classList.remove("cursor-hover"))
+                }),
+                e.style.visibility = "visible",
+                t.style.visibility = "visible"
         }
     }
 }
-;function rabbi_tm_imgtosvg() {
+; function rabbi_tm_imgtosvg() {
     "use strict";
-    jQuery('img.svg').each(function() {
+    jQuery('img.svg').each(function () {
         var jQueryimg = jQuery(this);
         var imgClass = jQueryimg.attr('class');
         var imgURL = jQueryimg.attr('src');
-        jQuery.get(imgURL, function(data) {
+        jQuery.get(imgURL, function (data) {
             var jQuerysvg = jQuery(data).find('svg');
             if (typeof imgClass !== 'undefined') {
                 jQuerysvg = jQuerysvg.attr('class', imgClass + ' replaced-svg');
@@ -283,7 +283,7 @@ function rabbi_tm_cursor() {
 }
 function rabbi_tm_popup() {
     "use strict";
-    jQuery('.gallery_zoom').each(function() {
+    jQuery('.gallery_zoom').each(function () {
         jQuery(this).magnificPopup({
             delegate: 'a.zoom',
             type: 'image',
@@ -294,7 +294,7 @@ function rabbi_tm_popup() {
             mainClass: 'mfp-fade'
         });
     });
-    jQuery('.popup-youtube, .popup-vimeo').each(function() {
+    jQuery('.popup-youtube, .popup-vimeo').each(function () {
         jQuery(this).magnificPopup({
             disableOn: 700,
             type: 'iframe',
@@ -314,7 +314,7 @@ function rabbi_tm_popup() {
 function rabbi_tm_data_images() {
     "use strict";
     var data = jQuery('*[data-img-url]');
-    data.each(function() {
+    data.each(function () {
         var element = jQuery(this);
         var url = element.data('img-url');
         element.css({
@@ -324,7 +324,7 @@ function rabbi_tm_data_images() {
 }
 function rabbi_tm_contact_form() {
     "use strict";
-    jQuery(".contact_form #send_message").on('click', function() {
+    jQuery(".contact_form #send_message").on('click', function () {
         var name = jQuery(".contact_form #name").val();
         var email = jQuery(".contact_form #email").val();
         var message = jQuery(".contact_form #message").val();
@@ -339,7 +339,7 @@ function rabbi_tm_contact_form() {
                 ajax_email: email,
                 ajax_message: message,
                 ajax_subject: subject
-            }, function(data) {
+            }, function (data) {
                 jQuery(".contact_form .returnmessage").append(data);
                 if (jQuery(".contact_form .returnmessage span.contact_error").length) {
                     jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);
@@ -411,7 +411,7 @@ function rabbi_tm_owl_carousel() {
     if (jQuery('body').hasClass('rtl')) {
         rtlMode = 'true';
     }
-    carousel3.each(function() {
+    carousel3.each(function () {
         var element = jQuery(this);
         element.owlCarousel({
             loop: false,
@@ -436,11 +436,11 @@ function rabbi_tm_owl_carousel() {
                 }
             }
         });
-        element.closest('.rabbi_tm_portfolio').find('.next_button').click(function() {
+        element.closest('.rabbi_tm_portfolio').find('.next_button').click(function () {
             element.trigger('next.owl.carousel');
             return false;
         });
-        element.closest('.rabbi_tm_portfolio').find('.prev_button').click(function() {
+        element.closest('.rabbi_tm_portfolio').find('.prev_button').click(function () {
             element.trigger('prev.owl.carousel');
             return false;
         });
@@ -461,7 +461,7 @@ function rabbi_tm_scrollable() {
     verMenu.css({
         height: H - avatarHeight - copyright
     });
-    scrollable.each(function() {
+    scrollable.each(function () {
         var element = jQuery(this);
         element.css({
             height: H - avatarHeight - copyright
@@ -477,14 +477,14 @@ function rabbi_tm_stickyy() {
     "use strict";
     var el = jQuery('.fn_w_sminiboxes');
     if (el.length) {
-        el.each(function(index, element) {
+        el.each(function (index, element) {
             var child = jQuery(element).find('.fn_w_sminibox');
             child.css({
                 height: 'auto'
             });
             var W = jQuery(window).width();
             if (W > 1200) {
-                var elementHeights = child.map(function() {
+                var elementHeights = child.map(function () {
                     return jQuery(this).outerHeight();
                 }).get();
                 var maxHeight = Math.max.apply(null, elementHeights);
@@ -498,7 +498,7 @@ function rabbi_tm_stickyy() {
 jQuery('.anchor_nav').onePageNav();
 function rabbi_tm_down() {
     "use strict";
-    jQuery('.anchor').on('click', function() {
+    jQuery('.anchor').on('click', function () {
         if ($.attr(this, 'href') !== '#') {
             $('html, body').animate({
                 scrollTop: $($.attr(this, 'href')).offset().top
@@ -510,7 +510,7 @@ function rabbi_tm_down() {
 function rabbi_tm_location() {
     "use strict";
     var button = jQuery('.href_location');
-    button.on('click', function() {
+    button.on('click', function () {
         var element = jQuery(this);
         var address = element.text();
         address = address.replace(/\ /g, '+');
