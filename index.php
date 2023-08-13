@@ -1,3 +1,6 @@
+<!-- Connect with php file -->
+<?php include 'contact.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1436,27 +1439,28 @@
                                     <div class="right">
                                         <div class="fields">
                                             <form action="contact.php" method="post" class="contact_form" id="contact_form">
-                                                <div class="returnmessage"
-                                                    data-success="Your message has been received, We will contact you soon.">
+                                                <div class="returnmessage">
+                                                    <p> <?php echo $success; ?></p>
+                                                    <p> <?php echo $failed; ?></p>
                                                 </div>
                                                 <div class="empty_notice"><span>Please Fill Required Fields</span></div>
                                                 <div class="first">
                                                     <ul>
                                                         <li>
-                                                            <input id="name" type="text" placeholder="Enter your name"
+                                                            <input id="name" name="name" type="text" placeholder="Enter your name"
                                                                 autocomplete="off">
                                                         </li>
                                                         <li>
-                                                            <input id="email" type="text" placeholder="Your email"
+                                                            <input id="email" name="email" type="text" placeholder="Your email"
                                                                 autocomplete="off">
                                                         </li>
                                                     </ul>
                                                 </div>
                                                 <div class="last">
-                                                    <textarea id="message" placeholder="Write something..."></textarea>
+                                                    <textarea id="message" name="message" placeholder="Write something..."></textarea>
                                                 </div>
                                                 <div class="rabbi_tm_button">
-                                                    <a id="send_message" href="#">Submit now</a>
+                                                    <a id="send_message" name="submit" href="#">Submit now</a>
                                                 </div>
                                             </form>
                                         </div>
