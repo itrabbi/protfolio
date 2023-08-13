@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST["ajax_message"];
     $subject = $_POST["ajax_subject"];
     
-    Validate the data (you can implement more advanced validation)
+    // Validate the data (you can implement more advanced validation)
     if (empty($name) || empty($email) || empty($message)) {
         echo "<span class='contact_error'>Please fill all required fields cfdsgsfdg.</span>";
     } 
