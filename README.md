@@ -1,1 +1,1 @@
-<a href="https://www.itrabbi.xyz" target="blank">itrabbi.xyz</a>
+<a href="https://www.itrabbi.com" target="blank">itrabbi.com</a>
