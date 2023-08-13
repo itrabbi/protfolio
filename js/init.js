@@ -323,40 +323,40 @@ function rabbi_tm_data_images() {
     });
 }
 //CONTACT
-// function rabbi_tm_contact_form() {
-//     "use strict";
-//     jQuery(".contact_form #send_message").on('click', function () {
-//         var name = jQuery(".contact_form #name").val();
-//         var email = jQuery(".contact_form #email").val();
-//         var message = jQuery(".contact_form #message").val();
-//         var subject = jQuery(".contact_form #subject").val();
-//         var success = jQuery(".contact_form .returnmessage").data('success');
-//         jQuery(".contact_form .returnmessage").empty();
-//         if (name === '' || email === '' || message === '') {
-//             jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
-//         } else {
-//             jQuery.post("contact.php", {
-//                 ajax_name: name,
-//                 ajax_email: email,
-//                 ajax_message: message,
+function rabbi_tm_contact_form() {
+    "use strict";
+    jQuery(".contact_form #send_message").on('click', function () {
+        var name = jQuery(".contact_form #name").val();
+        var email = jQuery(".contact_form #email").val();
+        var message = jQuery(".contact_form #message").val();
+        var subject = jQuery(".contact_form #subject").val();
+        var success = jQuery(".contact_form .returnmessage").data('success');
+        jQuery(".contact_form .returnmessage").empty();
+        if (name === '' || email === '' || message === '') {
+            jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
+        } else {
+            jQuery.post("contact.php", {
+                ajax_name: name,
+                ajax_email: email,
+                ajax_message: message,
     
-//                 ajax_subject: subject
-//             }, function (data) {
-//                 jQuery(".contact_form .returnmessage").append(data);
-//                 if (jQuery(".contact_form .returnmessage span.contact_error").length) {
-//                     jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);
-//                 } else {
-//                     jQuery(".contact_form .returnmessage").append("<span class='contact_success'>" + success + "</span>");
-//                     jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
-//                 }
-//                 if (data === "") {
-//                     jQuery("#contact_form")[0].reset();
-//                 }
-//             });
-//         }
-//         return false;
-//     });
-// }
+                ajax_subject: subject
+            }, function (data) {
+                jQuery(".contact_form .returnmessage").append(data);
+                if (jQuery(".contact_form .returnmessage span.contact_error").length) {
+                    jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);
+                } else {
+                    jQuery(".contact_form .returnmessage").append("<span class='contact_success'>" + success + "</span>");
+                    jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
+                }
+                if (data === "") {
+                    jQuery("#contact_form")[0].reset();
+                }
+            });
+        }
+        return false;
+    });
+}
 //CONTACT
 
 function rabbi_tm_owl_carousel() {
